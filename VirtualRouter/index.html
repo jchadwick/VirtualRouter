@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Virtual Routing Demo</title>
+    <link href="site.css" rel="stylesheet" />
+</head>
+<body ng-app="VirtualRouting" >
+    <h1>Component Routing</h1>
+    
+    <div class="half-screen" ng-controller="MainController">
+        <ul class="menu">
+            <li><a ng-click="path = '/view1'">View #1</a></li>
+            <li><a ng-click="path = '/view2'">View #2</a></li>
+            <li><a ng-click="router.navigateTo('/view3')">View #3</a></li>
+        </ul>
+        <span>Path: {{path}}</span>
+        <div class="clearfix"></div>
+        
+        <!-- INTERESTING PART: -->
+        <div routed-view></div>
+
+    </div>
+    
+    <div class="half-screen" ng-controller="ClientsController">
+        <span>Path: {{path}}</span>
+        <div class="clearfix"></div>
+
+        <!-- INTERESTING PART: -->
+        <div routed-view></div>
+
+    </div>
+
+    <script src="scripts/jquery-2.1.0.min.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/virtualRouter.js"></script>
+    <script src="app/routedView.js"></script>
+</body>
+</html>

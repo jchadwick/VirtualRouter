@@ -70,7 +70,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\mlView.js" />
+    <Content Include="app\virtualRouter.js" />
+    <Content Include="app\routedView.js" />
     <Content Include="index.html" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-route.js" />
@@ -86,18 +87,22 @@
     <Content Include="site.min.css">
       <DependentUpon>site.css</DependentUpon>
     </Content>
-    <Content Include="views\View3.html" />
-    <Content Include="views\View2.html" />
-    <Content Include="views\View1.html" />
+    <Content Include="views\Clients\Details.html" />
+    <Content Include="views\Clients\Home.html" />
+    <Content Include="views\ClientsComponent.html" />
+    <Content Include="views\Main\View3.html" />
+    <Content Include="views\Main\View2.html" />
     <Content Include="Web.config" />
     <Content Include="scripts\jquery-2.1.0.min.map" />
-    <None Include="site.less" />
+    <None Include="site.less">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.js" />
+    <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-mocks.d.ts" />

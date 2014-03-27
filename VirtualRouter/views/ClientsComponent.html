@@ -1,0 +1,22 @@
+﻿
+<component name="ClientsComponent" ng-controller="ClientsController">
+    
+
+    <!-- Homepage -->
+    <view route="/" default>
+        <h3>Select a Client:</h3>
+        <ul>
+            <li><a href="#" ng-click="$parent.path = '/clients/1'">Client #1</a></li>
+            <li><a href="#" ng-click="$parent.path = '/clients/2'">Client #2</a></li>
+        </ul>
+    </view>
+    
+    
+    <!-- Client details page (via parameterized route) -->
+    <view route="/clients/:clientId"
+          templateurl="/views/Clients/Details.html"
+          controller="ClientDetailsController">
+    </view>
+    
+
+</component>
