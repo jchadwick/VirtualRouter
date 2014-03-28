@@ -1,6 +1,5 @@
 ﻿
-<component name="ClientsComponent" ng-controller="ClientsController">
-    
+<div component routed-view name="ClientsComponent" ng-controller="ClientsController">
 
     <!-- Homepage -->
     <view route="/" default>
@@ -10,13 +9,13 @@
             <li><a href="#" ng-click="$parent.path = '/clients/2'">Client #2</a></li>
         </ul>
     </view>
-    
-    
+
+
     <!-- Client details page (via parameterized route) -->
     <view route="/clients/:clientId"
           templateurl="/views/Clients/Details.html"
           controller="ClientDetailsController">
     </view>
-    
 
-</component>
+
+</div>

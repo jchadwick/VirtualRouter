@@ -4,9 +4,9 @@
     <title>Virtual Routing Demo</title>
     <link href="site.css" rel="stylesheet" />
 </head>
-<body ng-app="VirtualRouting" >
+<body ng-app="VirtualRouting">
     <h1>Component Routing</h1>
-    
+
     <div class="half-screen" ng-controller="MainController">
         <ul class="menu">
             <li><a ng-click="path = '/view1'">View #1</a></li>
@@ -15,25 +15,42 @@
         </ul>
         <span>Path: {{path}}</span>
         <div class="clearfix"></div>
-        
-        <!-- INTERESTING PART: -->
-        <div routed-view></div>
-
-    </div>
-    
-    <div class="half-screen" ng-controller="ClientsController">
-        <span>Path: {{path}}</span>
-        <div class="clearfix"></div>
 
         <!-- INTERESTING PART: -->
-        <div routed-view></div>
+        <div routed-view class="bordered"></div>
 
     </div>
+
+    <div class="half-screen">
+
+        <!-- INTERESTING PART: -->
+        <component>
+
+            <view route="/">
+                <h3>Select a Client:</h3>
+                <ul>
+                    <li><a href="#" ng-click="navigateTo('/clients/1')">Client #1</a></li>
+                    <li><a href="#" ng-click="navigateTo('/clients/2')">Client #2</a></li>
+                </ul>
+            </view>
+
+            <view route="/clients/:clientId"
+                  templateurl="/views/Clients/Details.html?1"
+                  controller="ClientDetailsController">
+            </view>
+            
+            <h3>Client Directory</h3>
+            <div routed-view class="bordered"></div>
+        </component>
+    </div>
+    <div class="clearfix"></div>
 
     <script src="scripts/jquery-2.1.0.min.js"></script>
     <script src="scripts/angular.js"></script>
     <script src="app/app.js"></script>
     <script src="app/virtualRouter.js"></script>
     <script src="app/routedView.js"></script>
+    <script src="app/component.js"></script>
+    <script src="app/clientsDirective.js"></script>
 </body>
 </html>

@@ -5,9 +5,12 @@ body {
 [ng-cloak] {
   display: none;
 }
-routed-view,[routed-view] {
+.bordered {
   border: 1px solid #ccc;
   padding: .2em;
+}
+routed-view {
+  display: block;
 }
 .half-screen {
   float: left;

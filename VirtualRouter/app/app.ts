@@ -22,6 +22,10 @@ angular.module('VirtualRouting', ['ng'])
 
     })
 
+    .controller('DummyController', function ($scope, $log) {
+        $log.log('Dummy Controller initialized with scope', $scope.$id);
+    })
+
     .controller('ClientsController', function ($scope, virtualRouter) {
 
         virtualRouter($scope)
@@ -30,11 +34,13 @@ angular.module('VirtualRouting', ['ng'])
             // Parameterized route:
             .when('/clients/:clientId', {
                 templateUrl: '/views/Clients/Details.html',
-                controller: function ($scope, $routeParams) {
-                    angular.extend($scope, $routeParams);
-                }
+                controller: 'ClientDetailsController'
             })
             .otherwise({ redirectTo: '/home' })
             .watch('path');
+    })
+
+    .controller('ClientDetailsController', function ($scope, $routeParams) {
+        angular.extend($scope, $routeParams);
     })
 
